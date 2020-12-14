@@ -6,9 +6,7 @@ https://exceljet.net/excel-functions/excel-sumifs-function
 
 普遍要求：
 
-
-
-![](https://tva1.sinaimg.cn/large/0081Kckwly1gkbi4op5k4j31gw0muqle.jpg)
+![](https://tva1.sinaimg.cn/large/0081Kckwly1glnzxy07epj32650u0hdt.jpg)
 
 ### 添加add-ins
 
