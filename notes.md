@@ -6,13 +6,8 @@ https://exceljet.net/excel-functions/excel-sumifs-function
 
 普遍要求：
 
-
-
-策略相关的大多需要excel：
-
 ![](https://tva1.sinaimg.cn/large/0081Kckwly1gkbi07uxbmj31f80se1e1.jpg)
 
-要能做到什么效果：
 
 ![](https://tva1.sinaimg.cn/large/0081Kckwly1gkbi4op5k4j31gw0muqle.jpg)
 
