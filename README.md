@@ -20,7 +20,7 @@ https://exceljet.net/excel-functions/excel-sumifs-function
 
 - Balance Sheet
 
-- Interactive Dashboard
+- Interactive Dashboard(Data Visulization)
 
 - Excel Solver
 
