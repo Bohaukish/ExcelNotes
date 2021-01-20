@@ -25,3 +25,7 @@ https://exceljet.net/excel-functions/excel-sumifs-function
 - Excel Solver
 
 - Macros, VBA
+
+- Linear Regression Analysis
+
+  Univariate Analysis, Outlier Treatment, Missing Value Imputation, Identifying and treating missing values, Variable Transformation, Correlation Analysis.
