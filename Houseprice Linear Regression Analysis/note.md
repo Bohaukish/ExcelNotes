@@ -40,7 +40,7 @@ kth largest设置为25是3rd quartile value(75%)，kth smallest设为25是 1st q
 
 ![](https://tva1.sinaimg.cn/large/008eGmZEly1gmtmtgnvd9j31760fcgub.jpg)
 
-### 粗略判断是否有outliers
+### Outliers detection
 
 2 methods:
 
@@ -91,7 +91,7 @@ capping and floating: define the upper and lower limit. 比如这里给出的\[0
 
 这里填0是有前提的if zero makes sense in any particular scenario we can do that.
 
-第三点这个wegment based:
+第三点这个segment based:
 
 For example if we have rainfall data of different cities but the data is missing for some cities, instead of using population mean we can take the mean of neighboring cities or cities belonging to similar region or cities belonging to same state to fill the blanks. 所以business knowledge很重要
 
@@ -121,7 +121,60 @@ For example if we have rainfall data of different cities but the data is missing
 
 ```IF($N2=="yes", 1, 0)```
 
-对于多值的：
+对于多值的：waterbody 有4个unique values, 需要弄出k-1列即3列，接下来也是原地复制only values，删原列
+
+#### Correlation
+
+也在data analysis add-in,用conditional formatting美化一下
+
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gmtvkcbtr6j30za0ektcq.jpg)
+
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gmtvlfq0flj31uk0hg1fx.jpg)
+
+
+### Application in Excel
+
+#### using Data Analysis add-in
+
+Data tab -> Data Analysis -> regressions
+
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gmys2zgxxuj30x40u0tuh.jpg)
+
+各参数解析：https://www.cnblogs.com/webRobot/p/8464579.html
+
+其中红色表示P值小于显著性水平0.05的，说明这些项的自变量与因变量存在相关性。（其中multi用的F检验，因为多个相关；如果是simple linear regression用的t检验）
+
+#### Interpretation of categorical variables
+
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gmyr2yt63rj31uz0u0dyf.jpg)
+
+- $\beta_0$：value of all the other predictors multiplied by the conditions
+
+- 最后一个长得很奇怪的是constant
+
+结果的含义，相比于无机场而言，如果有一个机场，那么房价+1.1315个单元。
+
+多categorical valus的列同理：只不过这三个p值太高，there is no statistical evidence that there will be an impact of these three variables on the house price.
+
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gmyraucw8xj31740gw477.jpg)
+
+
+#### Using Solver
+
+先把所有参数initilize为1，算forcast是sumproduc..., sqrt diff是forcast - 实际值再开根号，右上角是sum of sqrt diff这一列
+
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gmys03efk1j31xe0u0hdu.jpg)
+
+
+接下来开solver:
+
+![](https://tva1.sinaimg.cn/large/008eGmZEly1gmys1a6t6ej31xd0u0qv6.jpg)
+
+希望右上角的sum of sqrt diff 最小，改变的参数是那一列初始的1。出结果，其中sum of sqrt diff 最小为11886.9，跟之前在ANOVA表里看到的risidual 11794.1857差不多。
+
+
+
+
 
 
 
